@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Fountain for a Cat</title>
+  <link rel="stylesheet" href="/Users/naelelbatji/Desktop/real website/projects/Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#prototypes">Prototypes</a></li>
+      <li><a href="#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">Water Fountain for a Cat</h1>
+    
+    <!-- Resized Image -->
+    <img src="../images/Water_Fountain.png" alt="Water Fountain for a Cat" class="project-image fade-in">
+
+    <div class="section-content fade-in">
+      <p>
+        This project involved designing a DIY water fountain using Arduino some
+        simple electronics, this is both efficient and fun!
+      </p>
+      <p><strong>Why I Built This:</strong> I decided to create a water fountain specifically for my cat after noticing that many cats are not fond of drinking water from stagnant sources. Recognizing the importance of hydration for feline health, I took it upon myself to design and build a unique water fountain tailored to my cat's preferences. The flowing water not only adds an element of freshness but also appeals to my cat's natural instincts.
+
+        The custom water fountain not only serves the practical purpose of encouraging my cat to drink more water, promoting overall well-being, but it also provides an aesthetically pleasing addition to the living space. It's a small yet thoughtful way to enhance my pet's daily life and ensure they stay adequately hydrated, contributing to their health and happiness.</h1>
+</p>
+      <p><strong>Materials Needed:</strong></p>
+      <ul class="materials-list">
+        <li><a href="https://osoyoo.store/products/osoyoo-uno-board-for-arduino-model-lacc200600" target="_blank" class="product-link">Arduino UNO Board</a></li>
+        <li><a href="https://www.amazon.com/gp/product/B08PBQ1N1G/" target="_blank" class="product-link">Mini DIY Water Pump</a></li>
+        <li><a href="https://osoyoo.store/products/esp8266-wifi-shiled-for-arduino-uno" target="_blank" class="product-link">WiFi Shield</a></li>
+        <li><a href="https://osoyoo.store/products/osoyoo-model-x-motor-driver-module-for-arduino?variant=31648878755951" target="_blank" class="product-link">Model-X Motor Driver</a></li>
+        <li><a href="https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_4" target="_blank" class="product-link">Ultrasonic Sensor Module</a></li>
+        <li><a href="https://www.amazon.com/dp/B01EV70C78?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank" class="product-link">Cables</a></li>
+      </ul>
+      <p><strong>Estimated Cost:</strong> Around $60 USD.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Detect scrolling and apply "scrolled" class to the nav bar
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+
+    // Add scroll animation for fade-in elements
+    const faders = document.querySelectorAll(".fade-in");
+    const options = {
+      threshold: 0.5,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

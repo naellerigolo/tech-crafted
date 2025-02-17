@@ -1,0 +1,132 @@
+/* General Reset */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+  color: #333;
+  padding-top: 80px; /* Prevents content from hiding under the nav bar */
+}
+
+/* Navigation Bar */
+nav {
+  background-color: black;
+  padding: 1em;
+  position: fixed; /* Keeps the nav bar always visible at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays above all other elements */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+/* Shrink effect when scrolling */
+nav.scrolled {
+  background-color: #333; /* Slightly lighter black */
+  transform: translateY(-5px); /* Moves the bar slightly up */
+}
+
+/* Nav links centered */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Centers links horizontally */
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for hover */
+}
+
+.nav-links a:hover {
+  transform: scale(1.1); /* Enlarges the text slightly */
+  color: #ddd; /* Lighter color on hover */
+}
+
+/* Project Page Header */
+.container {
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 1em;
+  text-align: center;
+  color: #333;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Content */
+.section-content {
+  margin: 2em 0;
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+/* Materials List */
+.materials-list {
+  text-align: left; /* Aligns materials list to the left */
+  margin-left: 20px;
+}
+
+.product-link {
+  color: black; /* Black text color */
+  text-decoration: none;
+  transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth animation */
+}
+
+.product-link:hover {
+  transform: translateX(px); /* Moves text slightly to the right */
+  font-size: 1.1em; /* Enlarges text */
+  color: #555; /* Darker gray on hover */
+}
+
+/* Project Image */
+.project-image {
+  max-width: 600px;
+  height: auto;
+  margin: 1em 0;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .section-content {
+    font-size: 1em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .project-image {
+    max-width: 300px; /* Resize smaller on mobile */
+  }
+
+  nav {
+    padding: 1em; /* Adjust padding for smaller screens */
+  }
+
+  .nav-links {
+    gap: 1em; /* Reduce gap between links */
+  }
+}

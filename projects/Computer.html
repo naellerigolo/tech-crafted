@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer</title>
+  <link rel="stylesheet" href="/Users/naelelbatji/Desktop/real website/projects/Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#prototypes">Prototypes</a></li>
+      <li><a href="#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">My Computer</h1>
+    
+    <!-- Resized Image -->
+    <img src="../images/Computer.jpg" alt="Water Fountain for a Cat" class="project-image fade-in">
+
+    <div class="section-content fade-in">
+      <p>
+        This project involved building a custom PC from scratch, combining high-performance components to create a powerful system capable of handling various tasks and applications. The PC features a robust motherboard, powerful CPU, and dedicated GPU, providing a seamless computing experience for gaming, content creation, and more.
+      </p>
+      <p><strong>Why I Built This:</strong>  decided to embark on the journey of building a PC to push the boundaries of my electronic assembly skills. This endeavor, however, proved to be just the beginning of my exploration. The foundation of this build rests upon the robust B550M Pro-VDH Wifi MSI motherboard, serving as the backbone for the system's performance. At its heart lies the powerful AMD Ryzen 5 5600X CPU, a true powerhouse capable of handling demanding tasks with ease.
+
+        To complement the CPU's prowess, I integrated the GeForce GTX 1660 Super GPU, ensuring smooth graphics rendering and immersive gaming experiences. With 2 sticks of DDR4 8GB RAM, this setup boasts ample memory to support multitasking and resource-intensive applications effortlessly.
+        
+        Storage capabilities are enhanced with the inclusion of a Crucial 500GB PCIe Gen3 NVMe M.2 SSD, delivering blazing-fast read and write speeds for swift data access. Additionally, a spacious 2TB HDD offers ample room for storing large files, ensuring versatility for various computing needs.
+        
+        Powering this system is a reliable 600W power supply, providing stable and efficient energy distribution to all components. Assembled with precision and attention to detail, this PC represents not only a test of my technical skills but also a gateway to endless possibilities in the realm of electronic craftsmanship.  </div>
+  </p>
+      <p><strong>Materials Needed:</strong></p>
+      <ul class="materials-list">
+        <li><a href="https://www.amazon.com/dp/B089D1YG11?psc=1&ref=ppx_yo2ov_dt_b_product_details" target="_blank" class="product-link">Motherboard</a></li>
+        <li><a href="https://www.amazon.com/dp/B08166SLDF?psc=1&ref=ppx_yo2ov_dt_b_product_details" target="_blank" class="product-link">CPU</a></li>
+        <li><a href="https://www.amazon.com/dp/B0BWMCF6GN?psc=1&ref=ppx_yo2ov_dt_b_product_details" target="_blank" class="product-link">GPU</a></li>
+        <li><a href="https://osoyoo.store/products/osoyoo-model-x-motor-driver-module-for-arduino?variant=31648878755951" target="_blank" class="product-link">Model-X Motor Driver</a></li>
+        <li><a href="https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_4" target="_blank" class="product-link">Ultrasonic Sensor Module</a></li>
+      </ul>
+      <p><strong>Estimated Cost:</strong> Around $60 USD.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Detect scrolling and apply "scrolled" class to the nav bar
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+
+    // Add scroll animation for fade-in elements
+    const faders = document.querySelectorAll(".fade-in");
+    const options = {
+      threshold: 0.5,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
