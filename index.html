@@ -1,82 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Mini Site NSI - Accueil</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GB1635SBBM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  
-  gtag('config', 'G-GB1635SBBM');
-</script>
-<body>
-  <!-- Fixed Navigation Bar -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#prototypes">Prototypes</a></li>
-      <li><a href="#products">Products</a></li>
-    </ul>
-  </nav>
+<body id="top">
+  <header class="site-header" id="top-banner">
+    <h1>Mini Site NSI : Architecture et Objets Connectes</h1>
+    <p class="subtitle">Accueil du projet scolaire avec 3 pages reliees.</p>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="projects/Computer.html">My Computer</a>
+      <a href="projects/BonjourDuffaud.html">Bonjour Mr Duffaud</a>
+      <a href="projects/WaterFountain.html">Water Fountain</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </header>
 
-  <!-- Prototypes Section -->
-  <section id="prototypes">
-    <h2>Prototypes</h2>
-    <div class="grid">
-      <a href="projects/WaterFountain.html" class="card">
-        <img src="images/Water_Fountain.png" alt="Water Fountain for a Cat">
-        <p>Water Fountain for a Cat</p>
+  <main class="page-layout">
+    <section class="panel">
+      <h2>Theme et objectif</h2>
+      <p>
+        Ce mini-site presente des exemples de materiel informatique et de projet embarque.
+        L image ci-dessous est cliquable et ouvre une source externe.
+      </p>
+      <a href="https://fr.wikipedia.org/wiki/Carte_m%C3%A8re" target="_blank" rel="noopener">
+        <img class="hero-image" src="images/arduino.jpg" alt="Carte electronique type Arduino">
       </a>
-      <a href="projects/Computer.html" class="card">
-        <img src="images/Computer.jpg" alt="My Computer">
-        <p>My Computer</p>
-      </a>
-    </div>
-  </section>
+      <p class="source-note">Source image: photo locale du dossier <code>images/arduino.jpg</code>.</p>
+      <p><a href="#tableau-outils">Aller directement au tableau</a> (lien ancre interne).</p>
+    </section>
 
-  <!-- Products Section -->
-  <section id="products">
-    <h2>Products</h2>
-    <div class="product-grid">
-      <a href="https://osoyoo.store/products/osoyoo-uno-board-for-arduino-model-lacc200600" target="_blank" class="product-card">
-        <img src="images/arduino.jpg" alt="OSOYOO UNO Board">
-        <h3>OSOYOO UNO Board</h3>
-        <p>$18.99 USD</p>
-      </a>
-      <a href="https://osoyoo.store/products/esp8266-wifi-shiled-for-arduino-uno" target="_blank" class="product-card">
-        <img src="images/wifi_shield.webp" alt="OSOYOO WIFI Shield">
-        <h3>OSOYOO WIFI Shield</h3>
-        <p>$12.99 USD</p>
-      </a>
-      <a href="https://osoyoo.store/products/osoyoo-model-x-motor-driver-module-for-arduino?variant=31648878755951" target="_blank" class="product-card">
-        <img src="images/motor_driver_module.webp" alt="Model-X Motor Driver">
-        <h3>Model-X Motor Driver</h3>
-        <p>$9.99 USD</p>
-      </a>
-      <a href="https://www.amazon.com/gp/product/B08PBQ1N1G/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1" target="_blank" class="product-card">
-        <img src="images/water_pump.jpg" alt="Mini DIY Water Pump">
-        <h3>Mini DIY Water Pump</h3>
-        <p>$9.99 USD</p>  
-      </a>
-      <a href="https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_4" target="_blank" class="product-card">
-        <img src="images/Ultrasonic sensor.png" alt="Ultrasonic Sensor Module">
-        <h3>Ultrasonic Sensor Module</h3>
-        <p>$6.99 USD</p>
+    <section class="panel">
+      <h2>Pages du mini-site</h2>
+      <div class="card-grid">
+        <a href="projects/Computer.html" class="card-link">
+          <img src="images/Computer.jpg" alt="My Computer">
+          <h3>My Computer</h3>
+          <p>Configuration d un PC personnel.</p>
         </a>
-        <a href="https://www.amazon.com/dp/B01EV70C78?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank" class="product-card">
-          <img src="images/Cable.png" alt="Cables">
-          <h3>Cable</h3>
-          <p>$9.99 USD</p>
-          </a>
-    </div>
-  </section>
+        <a href="projects/BonjourDuffaud.html" class="card-link">
+          <img src="images/Ultrasonic sensor.png" alt="Bonjour Mr Duffaud">
+          <h3>Bonjour Mr Duffaud</h3>
+          <p>Page dediee au professeur avec un exemple NSI.</p>
+        </a>
+        <a href="projects/WaterFountain.html" class="card-link">
+          <img src="images/Water_Fountain.png" alt="Water Fountain">
+          <h3>Water Fountain</h3>
+          <p>Projet de fontaine connectee.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="two-columns">
+      <article class="panel">
+        <h2>Liste non ordonnee (ul)</h2>
+        <ul>
+          <li>Carte mere</li>
+          <li>Processeur</li>
+          <li>Capteur ultrason</li>
+          <li>Pompe a eau</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Liste ordonnee (ol)</h2>
+        <ol>
+          <li>Choisir un besoin</li>
+          <li>Selectionner les composants</li>
+          <li>Assembler</li>
+          <li>Tester puis corriger</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="panel" id="tableau-outils">
+      <h2>Tableau comparatif</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Composant</th>
+            <th>Role</th>
+            <th>Exemple</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU</td>
+            <td>Executer les instructions</td>
+            <td>Ryzen 5 5600X</td>
+          </tr>
+          <tr>
+            <td>Capteur</td>
+            <td>Mesurer une distance</td>
+            <td>HC-SR04</td>
+          </tr>
+          <tr>
+            <td>Actionneur</td>
+            <td>Deplacer de l eau</td>
+            <td>Mini pompe 5V</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>Liens internes et externes + references</h2>
+      <p>
+        Liens internes:
+        <a href="projects/Computer.html">Page My Computer</a>,
+        <a href="projects/BonjourDuffaud.html">Page Bonjour Mr Duffaud</a>.
+      </p>
+      <p>
+        Liens externes:
+        <a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">W3Schools CSS</a>,
+        <a href="https://openweb.eu.org/articles/cascade_css" target="_blank" rel="noopener">OpenWeb Cascade CSS</a>.
+      </p>
+      <p class="source-note">
+        Sources de reference: W3Schools (proprietes CSS), OpenWeb (cascade CSS), et documentation technique
+        generale sur Wikipedia.
+      </p>
+      <p><a href="#top">Retour en haut</a></p>
+    </section>
+  </main>
 </body>
 </html>
