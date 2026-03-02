@@ -125,7 +125,7 @@
   <script>
     window.addEventListener("scroll", function () {
       const nav = document.querySelector("nav");
-      if (window.scrollY > 10) {
+      if (window.scrollY > 30) {
         nav.classList.add("scrolled");
       } else {
         nav.classList.remove("scrolled");
@@ -135,7 +135,7 @@
     const faders = document.querySelectorAll(".fade-in");
     const options = {
       threshold: 0.5,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -30px 0px"
     };
 
     const appearOnScroll = new IntersectionObserver(function (entries, observer) {
