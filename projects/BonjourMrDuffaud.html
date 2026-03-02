@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonjour Mr Duffaud</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body id="top">
+  <!-- Navigation Bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="Computer.html">My Computer</a></li>
+      <li><a href="WaterFountain.html">Water Fountain</a></li>
+      <li><a href="#tableau-criteres">Tableau</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1 class="fade-in">Bonjour Mr Duffaud - Verification des contraintes</h1>
+
+    <div class="section-content fade-in">
+      <p>
+        Cette page est dediee au controle des criteres du mini-site NSI.
+        Le lien ci-dessous est un lien ancre interne vers le tableau de verification.
+      </p>
+      <p><a href="#tableau-criteres" class="product-link">Aller directement au tableau des criteres</a></p>
+    </div>
+
+    <!-- Image with link -->
+    <a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">
+      <img src="../images/Photo_Duffaud.jpg" alt="Capteur ultrason utilise en NSI" class="project-image duffaud-image fade-in">
+    </a>
+
+    <div class="section-content fade-in">
+      <h2>Objectif</h2>
+      <p>Vous allez devoir :</p>
+      <ul class="materials-list">
+        <li>creer un mini-site avec au moins 3 pages et une feuille de style CSS ;</li>
+        <li>le mettre en ligne.</li>
+      </ul>
+
+      <h2>Les contraintes (resume)</h2>
+      <ul class="materials-list">
+        <li>Une feuille de style CSS avec au moins 10 proprietes.</li>
+        <li>Utiliser des selecteurs CSS de type <strong>class</strong> et <strong>id</strong>.</li>
+        <li>Avoir au moins 3 pages distinctes reliees entre elles.</li>
+        <li>Sur chaque page: titre, image, listes ul/ol, tableau, liens internes et externes.</li>
+        <li>Avoir un lien a partir d une image et des references de source.</li>
+        <li>Avoir au moins une page avec un lien ancre vers la meme page.</li>
+      </ul>
+
+      <h2>Liste ordonnee (ol)</h2>
+      <ol class="materials-list">
+        <li>Choisir un theme NSI.</li>
+        <li>Structurer les pages HTML.</li>
+        <li>Appliquer les styles CSS.</li>
+        <li>Verifier puis publier.</li>
+      </ol>
+
+      <h2 id="tableau-criteres">Tableau des criteres</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Critere</th>
+            <th>Etat</th>
+            <th>Preuve sur cette page</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Titre</td>
+            <td>OK</td>
+            <td>h1 en haut de page</td>
+          </tr>
+          <tr>
+            <td>Image + lien image</td>
+            <td>OK</td>
+            <td>image cliquable vers W3Schools</td>
+          </tr>
+          <tr>
+            <td>Listes ul et ol</td>
+            <td>OK</td>
+            <td>sections Objectif et Liste ordonnee</td>
+          </tr>
+          <tr>
+            <td>Tableau</td>
+            <td>OK</td>
+            <td>tableau des criteres</td>
+          </tr>
+          <tr>
+            <td>Liens internes et externes</td>
+            <td>OK</td>
+            <td>nav interne + liens web externes</td>
+          </tr>
+          <tr>
+            <td>Lien ancre</td>
+            <td>OK</td>
+            <td>lien vers #tableau-criteres</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Liens et references</h2>
+      <p>
+        Liens internes:
+        <a href="../index.html" class="product-link">Accueil</a>,
+        <a href="Computer.html" class="product-link">My Computer</a>,
+        <a href="WaterFountain.html" class="product-link">Water Fountain</a>.
+      </p>
+      <p>
+        Liens externes:
+        <a href="https://www.w3schools.com/css/" target="_blank" rel="noopener" class="product-link">W3Schools CSS</a>,
+        <a href="https://openweb.eu.org/articles/cascade_css" target="_blank" rel="noopener" class="product-link">OpenWeb Cascade CSS</a>.
+      </p>
+      <p>
+        <strong>Sources:</strong> W3Schools pour les proprietes CSS, OpenWeb pour la cascade CSS,
+        et contenu redige manuellement pour cette page.
+      </p>
+      <p><a href="#top" class="product-link">Retour en haut</a></p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+
+    const faders = document.querySelectorAll(".fade-in");
+    const options = {
+      threshold: 0.5,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
