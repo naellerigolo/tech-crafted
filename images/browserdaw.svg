@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="BrowserDAW">
+  <defs>
+    <linearGradient id="bdBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1033"/>
+      <stop offset="1" stop-color="#0b0618"/>
+    </linearGradient>
+    <linearGradient id="bdBar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" rx="10" fill="url(#bdBg)"/>
+  <!-- equalizer bars -->
+  <g fill="url(#bdBar)">
+    <rect x="26"  y="78"  width="14" height="58" rx="3"/>
+    <rect x="46"  y="58"  width="14" height="78" rx="3"/>
+    <rect x="66"  y="40"  width="14" height="96" rx="3"/>
+    <rect x="86"  y="66"  width="14" height="70" rx="3"/>
+    <rect x="106" y="50"  width="14" height="86" rx="3"/>
+    <rect x="126" y="84"  width="14" height="52" rx="3"/>
+    <rect x="146" y="46"  width="14" height="90" rx="3"/>
+    <rect x="166" y="70"  width="14" height="66" rx="3"/>
+    <rect x="186" y="56"  width="14" height="80" rx="3"/>
+    <rect x="206" y="38"  width="14" height="98" rx="3"/>
+    <rect x="226" y="74"  width="14" height="62" rx="3"/>
+    <rect x="246" y="60"  width="14" height="76" rx="3"/>
+    <rect x="266" y="82"  width="14" height="54" rx="3"/>
+    <rect x="286" y="64"  width="8"  height="72" rx="3"/>
+  </g>
+  <!-- piano keys -->
+  <g transform="translate(26,150)">
+    <rect width="268" height="26" rx="3" fill="#f4f4f5"/>
+    <g fill="#18122b">
+      <rect x="22" width="9" height="16" rx="1.5"/>
+      <rect x="46" width="9" height="16" rx="1.5"/>
+      <rect x="92" width="9" height="16" rx="1.5"/>
+      <rect x="116" width="9" height="16" rx="1.5"/>
+      <rect x="140" width="9" height="16" rx="1.5"/>
+      <rect x="186" width="9" height="16" rx="1.5"/>
+      <rect x="210" width="9" height="16" rx="1.5"/>
+    </g>
+    <g stroke="#c7c7d1" stroke-width="1">
+      <line x1="38" y1="0" x2="38" y2="26"/>
+      <line x1="76" y1="0" x2="76" y2="26"/>
+      <line x1="114" y1="0" x2="114" y2="26"/>
+      <line x1="152" y1="0" x2="152" y2="26"/>
+      <line x1="190" y1="0" x2="190" y2="26"/>
+      <line x1="228" y1="0" x2="228" y2="26"/>
+    </g>
+  </g>
+  <text x="26" y="28" font-family="Poppins, Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#ffffff">BrowserDAW</text>
+  <text x="294" y="28" text-anchor="end" font-family="Poppins, Segoe UI, sans-serif" font-size="10" fill="#22d3ee">Web Audio</text>
+</svg>

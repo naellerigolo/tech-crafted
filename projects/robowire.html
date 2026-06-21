@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoboWire</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a class="wordmark" href="../index.html"><span class="dot"></span>Nael Elbatji</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#prototypes">Prototypes</a></li>
+      <li><a href="../index.html#software">Software</a></li>
+      <li><a href="../index.html#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">RoboWire</h1>
+
+    <img src="../images/robowire.png" alt="RoboWire robotics wiring designer" class="project-image thumb fade-in">
+
+    <div class="section-content fade-in">
+      <p class="status-badge">&#10003; Verified working &mdash; <code>npm run build</code> passes (TypeScript strict, 11 routes prerendered)</p>
+
+      <p>
+        RoboWire is a browser-based, local-first robotics and RC wiring design tool. You drag
+        components &mdash; controllers like Arduino, ESP32 and Raspberry Pi, plus motors, sensors,
+        drivers and power parts &mdash; onto a canvas, wire them pin-to-pin, and a rule engine
+        validates the circuit with power, signal, ground, motor and topology checks.
+      </p>
+      <p>
+        From the resulting wiring graph it deterministically generates starter firmware:
+        Arduino C++, ESP32 C++ (including PS5-controller support and PWM channel setup) and
+        Raspberry Pi Python, alongside human-readable wiring steps and a connection table. The
+        editor is feature-dense: a searchable component library with favorites and custom
+        components, snap-to-grid and auto-layout, annotations and layers, reusable sub-circuits,
+        a template gallery, a command palette, light/dark theming and a guided onboarding tour.
+      </p>
+      <p>
+        It's local-first with no backend &mdash; projects and preferences live in the browser &mdash;
+        and it exports to PNG, SVG and PDF as well as Fritzing, EasyEDA, Wokwi, PlatformIO and
+        Home Assistant formats.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <ul class="tech-tags">
+        <li>Next.js 16</li>
+        <li>React 19</li>
+        <li>TypeScript</li>
+        <li>Tailwind CSS v4</li>
+        <li>React Flow</li>
+        <li>jsPDF</li>
+        <li>Playwright</li>
+        <li>Vercel</li>
+      </ul>
+
+      <p><a href="../index.html#software" class="back-link">&larr; Back to all software</a></p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) { nav.classList.add("scrolled"); }
+      else { nav.classList.remove("scrolled"); }
+    });
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

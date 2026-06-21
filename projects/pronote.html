@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRONOTE Study Planner</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a class="wordmark" href="../index.html"><span class="dot"></span>Nael Elbatji</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#prototypes">Prototypes</a></li>
+      <li><a href="../index.html#software">Software</a></li>
+      <li><a href="../index.html#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">PRONOTE Auto Homework &amp; Study Plan</h1>
+
+    <img src="../images/pronote.png" alt="PRONOTE Auto Homework and Study Plan extension" class="project-image thumb fade-in">
+
+    <div class="section-content fade-in">
+      <p class="status-badge">&#10003; Verified working &mdash; <code>npm test</code> 10/10 pass &middot; release validation passes</p>
+
+      <p>
+        A Manifest V3 Chrome extension that turns PRONOTE homework into an organized, time-estimated
+        study plan. Content scripts observe the PRONOTE student page to capture homework and tests,
+        storing them locally. A background service worker then generates a priority-aware plan: it
+        scores items by due date, type and difficulty, schedules sessions into the student's
+        free-time windows, creates spaced review sessions before tests, and applies manual
+        drag-and-drop overrides.
+      </p>
+      <p>
+        The planner UI (popup, options and a study-durations page) lets students browse and filter
+        homework, set per-subject study durations, manage reminders and run capture diagnostics.
+        Plans export as a local .ics file or optionally sync to a dedicated extension-managed Google
+        Calendar via Chrome Identity OAuth, using the least-privilege calendar.app.created scope so
+        the student's own calendars are never touched.
+      </p>
+      <p>
+        It's privacy-conscious by design: no analytics, no backend, data stays in Chrome extension
+        storage. A Node test suite loads the real background script in a sandbox and exercises the
+        planner, .ics parser, reminders and scheduling logic; a release-validation script enforces
+        manifest correctness and Chrome Web Store limits. All checks pass.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <ul class="tech-tags">
+        <li>Chrome Extension (MV3)</li>
+        <li>JavaScript</li>
+        <li>Service Workers</li>
+        <li>Chrome Identity OAuth</li>
+        <li>Google Calendar API</li>
+        <li>iCalendar (.ics)</li>
+        <li>Node test runner</li>
+      </ul>
+
+      <p><a href="../index.html#software" class="back-link">&larr; Back to all software</a></p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) { nav.classList.add("scrolled"); }
+      else { nav.classList.remove("scrolled"); }
+    });
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQLPath</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a class="wordmark" href="../index.html"><span class="dot"></span>Nael Elbatji</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#prototypes">Prototypes</a></li>
+      <li><a href="../index.html#software">Software</a></li>
+      <li><a href="../index.html#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">SQLPath</h1>
+
+    <img src="../images/sqlpath.svg" alt="SQLPath learn-SQL app" class="project-image thumb fade-in">
+
+    <div class="section-content fade-in">
+      <p class="status-badge">&#10003; Verified working &mdash; <code>npm run build</code> passes (Vite, 77 modules)</p>
+
+      <p>
+        SQLPath is a browser-based, no-backend platform for learning SQL from beginner to advanced.
+        It pairs bite-sized lessons (8 modules from SELECT through window functions and CTEs, each
+        with syntax, a runnable example, a real-world note, a common-mistake callout and a mini-quiz)
+        with 20 hands-on practice exercises.
+      </p>
+      <p>
+        Exercises aren't graded by string-matching: the app runs both your query and the reference
+        solution against the same in-browser SQLite database (sql.js / SQLite compiled to
+        WebAssembly) and compares the result sets &mdash; normalizing values and ignoring row order
+        except where ORDER BY or LIMIT make it significant. Failed queries surface the engine's
+        actual error message.
+      </p>
+      <p>
+        Beyond lessons and practice, it includes a free-form SQL Playground against a seeded sample
+        database, a localStorage-backed progress dashboard, a searchable cheat sheet, and a guide
+        for the French Baccalaur&eacute;at NSI exam. The whole experience runs client-side and works
+        offline after install.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <ul class="tech-tags">
+        <li>React 18</li>
+        <li>Vite 5</li>
+        <li>Tailwind CSS</li>
+        <li>sql.js (SQLite WASM)</li>
+        <li>React Router</li>
+        <li>JavaScript (ESM)</li>
+      </ul>
+
+      <p><a href="../index.html#software" class="back-link">&larr; Back to all software</a></p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) { nav.classList.add("scrolled"); }
+      else { nav.classList.remove("scrolled"); }
+    });
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

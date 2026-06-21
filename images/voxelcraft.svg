@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="VoxelCraft">
+  <defs>
+    <linearGradient id="vcSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.6" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#bae6fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" rx="10" fill="url(#vcSky)"/>
+  <!-- sun -->
+  <rect x="246" y="26" width="34" height="34" fill="#fde047"/>
+  <!-- clouds -->
+  <g fill="#ffffff" opacity="0.9">
+    <rect x="40" y="34" width="48" height="12"/>
+    <rect x="52" y="24" width="28" height="12"/>
+    <rect x="150" y="50" width="40" height="10"/>
+  </g>
+  <!-- isometric grass block (big) -->
+  <g transform="translate(96,92)">
+    <!-- top -->
+    <polygon points="64,0 128,32 64,64 0,32" fill="#6abe30"/>
+    <!-- left dirt -->
+    <polygon points="0,32 64,64 64,116 0,84" fill="#7c4a1e"/>
+    <!-- right dirt -->
+    <polygon points="128,32 64,64 64,116 128,84" fill="#5e3514"/>
+    <!-- grass speckles on top -->
+    <g fill="#86d24a">
+      <rect x="40" y="20" width="10" height="6"/>
+      <rect x="70" y="30" width="10" height="6"/>
+      <rect x="58" y="44" width="10" height="6"/>
+    </g>
+    <!-- dirt speckles -->
+    <g fill="#8a5a2b">
+      <rect x="14" y="50" width="8" height="8"/>
+      <rect x="34" y="74" width="8" height="8"/>
+      <rect x="90" y="52" width="8" height="8"/>
+      <rect x="100" y="80" width="8" height="8"/>
+    </g>
+  </g>
+  <!-- small block -->
+  <g transform="translate(36,128)">
+    <polygon points="28,0 56,14 28,28 0,14" fill="#9ca3af"/>
+    <polygon points="0,14 28,28 28,52 0,38" fill="#6b7280"/>
+    <polygon points="56,14 28,28 28,52 56,38" fill="#4b5563"/>
+  </g>
+  <text x="20" y="184" font-family="Poppins, Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#1f2937">VoxelCraft</text>
+  <text x="300" y="184" text-anchor="end" font-family="Poppins, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#1f2937">three.js</text>
+</svg>

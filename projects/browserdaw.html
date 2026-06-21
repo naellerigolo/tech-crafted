@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrowserDAW</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a class="wordmark" href="../index.html"><span class="dot"></span>Nael Elbatji</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#prototypes">Prototypes</a></li>
+      <li><a href="../index.html#software">Software</a></li>
+      <li><a href="../index.html#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">BrowserDAW</h1>
+
+    <img src="../images/browserdaw.svg" alt="BrowserDAW music production app" class="project-image thumb fade-in">
+
+    <div class="section-content fade-in">
+      <p class="status-badge">&#10003; Verified working &mdash; <code>npm run build</code> passes (typecheck + Vite, 1706 modules)</p>
+
+      <p>
+        BrowserDAW is a browser-based digital audio workstation inspired by FL Studio, built
+        entirely on the raw Web Audio API &mdash; no audio library. It implements a complete
+        music-production workflow: a 16/32-step channel-rack sequencer with per-step velocity,
+        note and probability; a piano roll; and three instruments built from scratch &mdash; a
+        subtractive synth, a sampler, and an 8-pad drum machine.
+      </p>
+      <p>
+        A sample-accurate transport scheduler drives playback with swing and a metronome. The
+        mixer routes per-track channels to a master bus with insert FX and send/return buses,
+        backed by a hand-built effects suite (parametric EQ, reverb, ping-pong delay, compressor,
+        chorus, distortion, limiter). An arranger places pattern clips on a song timeline, and
+        projects can be played live from a QWERTY or MIDI keyboard, saved as local files, or
+        rendered offline to WAV or MP3.
+      </p>
+      <p>
+        The frontend is React + TypeScript with Zustand state and temporal undo/redo. Supabase
+        optionally backs auth and cloud project storage, but the client degrades gracefully so the
+        DAW runs fully local with no backend configured &mdash; roughly 16,300 lines across 69 files.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <ul class="tech-tags">
+        <li>React 18</li>
+        <li>TypeScript</li>
+        <li>Vite</li>
+        <li>Web Audio API</li>
+        <li>Zustand</li>
+        <li>Tailwind CSS</li>
+        <li>Supabase</li>
+        <li>Web MIDI</li>
+      </ul>
+
+      <p><a href="../index.html#software" class="back-link">&larr; Back to all software</a></p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) { nav.classList.add("scrolled"); }
+      else { nav.classList.remove("scrolled"); }
+    });
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

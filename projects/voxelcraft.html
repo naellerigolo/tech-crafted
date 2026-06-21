@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoxelCraft</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a class="wordmark" href="../index.html"><span class="dot"></span>Nael Elbatji</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#prototypes">Prototypes</a></li>
+      <li><a href="../index.html#software">Software</a></li>
+      <li><a href="../index.html#products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="fade-in">VoxelCraft</h1>
+
+    <img src="../images/voxelcraft.svg" alt="VoxelCraft browser voxel game" class="project-image thumb fade-in">
+
+    <div class="section-content fade-in">
+      <p class="status-badge">&#10003; Verified working &mdash; all source parses; documented build reproduces the page byte-for-byte</p>
+
+      <p>
+        VoxelCraft is a browser-based, Minecraft-style voxel sandbox written in vanilla JavaScript
+        and rendered with three.js. The entire game ships as a single self-contained HTML file of
+        about 3,840 lines, authored as eight modular source parts that are concatenated into the
+        final page. Notably it uses no image or audio asset files at all: every block and item
+        texture is painted at runtime with Canvas 2D, and all sound effects are synthesized live
+        through the Web Audio API.
+      </p>
+      <p>
+        Terrain is procedurally generated from seeded simplex noise across seven biomes with caves,
+        ores and trees. The custom chunked renderer does face culling, ambient occlusion and smooth
+        lighting via GLSL shaders, plus a day/night cycle with sun, moon, stars and fog. Gameplay
+        includes survival and creative modes, a hotbar/inventory with 2x2 and 3x3 crafting, furnace
+        smelting and chests, block mining and placement, eight mob types with AI, arrows, TNT and
+        flowing water/lava &mdash; with player health, hunger, air, XP and armor, all persisted to
+        localStorage.
+      </p>
+
+      <h2>Tech Stack</h2>
+      <ul class="tech-tags">
+        <li>Vanilla JavaScript</li>
+        <li>three.js r128</li>
+        <li>WebGL / GLSL</li>
+        <li>HTML5 Canvas 2D</li>
+        <li>Web Audio API</li>
+        <li>localStorage</li>
+      </ul>
+
+      <p><a href="../index.html#software" class="back-link">&larr; Back to all software</a></p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) { nav.classList.add("scrolled"); }
+      else { nav.classList.remove("scrolled"); }
+    });
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
